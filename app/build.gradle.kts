@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.vitairos.mobile"
-    compileSdk = 35 // O 34/37 según lo que tenías, mantenlo igual si te da error
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.vitairos.mobile"
@@ -13,13 +13,17 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -44,6 +48,7 @@ dependencies {
     // LIBRERÍAS CLAVE PARA LA EVALUACIÓN
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.6")
     implementation("androidx.compose.material:material-icons-extended:1.7.5")
+    implementation("androidx.navigation:navigation-compose:2.8.3")
 
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
